@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Logs de Ações</title>
+</head>
+<body>
+    <h1>Ações Registradas</h1>
+    <pre id="area-log"></pre>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const acoes = JSON.parse(localStorage.getItem('acoes')) || [];
+            document.getElementById('area-log').textContent = JSON.stringify(acoes, null, 2);
+        });
+    </script>
+</body>
+</html>
